@@ -1,0 +1,75 @@
+// scroll to top button
+.topbutton {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--mr-color-primary);
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    z-index: 1024;
+    color: white;
+    transition: all .15s linear;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    @include lg-up {
+        width: 50px;
+        height: 50px;
+        bottom: 40px;
+        right: 40px;
+    }
+    &:hover {
+        background-color: var(--mr-color-primary);
+        color: white;
+    }
+    &.btn-show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+// primary solid button
+/* From Uiverse.io by gharsh11032000 */
+.primary_solid_btn {
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+    z-index: 1;
+    border-radius: 6px;
+    font-weight: 700;
+    color: var(--mr-color-secondary);
+    font-family: var(--mr-global-font-family);
+    background: var(--mr-color-primary);
+    padding: 12px 30px;
+    border-radius: 0;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1;
+    @include xl-up {
+        font-size: 18px;
+        padding: 15px 28px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: var(--mr-color-secondary);
+        height: 250px;
+        width: 300px;
+        border-radius: 50%;
+        top: 100%;
+        left: 100%;
+        transition: all 0.7s;
+    }
+    &:hover {
+        color: var(--mr-color-white);
+        &::before {
+            top: -90px;
+            left: -20px;
+        }
+    }
+}
+
+  
